@@ -1,8 +1,9 @@
 #!/usr/bin/python
 import sys
+import os
 
-tekst = sys.argv[1]
-
+tekst 	= sys.argv[1]
+katalog = "/home/spaszko/python/pyNotify"
 
 from gi.repository import Notify
 tekst
@@ -19,7 +20,7 @@ czas = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 tekst_to_file = czas + " > " + tekst + "\n"
 
 #zapis do loga
-filename = "logfile.log"
+filename = katalog + "/logfile.log"
 f = open(filename,'a')
 while f.closed:
 	time.sleep(1)
@@ -28,7 +29,7 @@ f.write(tekst_to_file)
 f.close()
 
 #zapis do newloga
-filename = "newlogfile.log"
+filename = katalog + "/newlogfile.log"
 f = open(filename,'a')
 while f.closed:
 	time.sleep(1)

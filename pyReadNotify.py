@@ -1,8 +1,10 @@
 #!/usr/bin/python
 import sys
 
+katalog = "/home/spaszko/python/pyNotify"
+
 #odczyt newloga
-filename = "newlogfile.log"
+filename = katalog + "/newlogfile.log"
 f = open(filename,'r')
 while f.closed:
 	time.sleep(1)
