@@ -1,22 +1,27 @@
 #!/usr/bin/python
-import sys
-
+import sys, argparse
 katalog = "/home/spaszko/python/pyNotify"
+filename = katalog + "/newlogfile.log"
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-a", "--all", action='store_true', required=False)
+parser.add_argument("-n", "--new", action='store_true', required=False)
+args = parser.parse_args()
+
+if args.all:
+	filename = katalog + "/logfile.log"
 
 #odczyt newloga
-filename = katalog + "/newlogfile.log"
 f = open(filename,'r')
 while f.closed:
 	time.sleep(1)
 	f = open(filename,'r')
 tekst = f.read()
-f.close()
 
-#czyszczenie new loga
-f = open(filename,'w')
-while f.closed:
-	time.sleep(1)
-	f = open(filename,'w')
+# Czyszczenie pliku.
+if not args.all:
+		f = open(filename,'w')
+
 f.close()
 
 sys.stdout.write(tekst)
