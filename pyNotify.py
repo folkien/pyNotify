@@ -15,7 +15,7 @@ Hello.show ()
 
 #Pobranie czasu
 from time import gmtime, strftime
-czas = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+czas = strftime("%Y-%m-%d %H:%M:%S")
 
 tekst_to_file = czas + " > " + tekst + "\n"
 
