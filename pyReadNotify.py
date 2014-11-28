@@ -1,6 +1,6 @@
 #!/usr/bin/python
-import sys, argparse
-katalog = "/home/spaszko/python/pyNotify"
+import sys, argparse, os
+katalog = os.getenv("HOME") + "/python/pyNotify"
 filename = katalog + "/newlogfile.log"
 
 parser = argparse.ArgumentParser()

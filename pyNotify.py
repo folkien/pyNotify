@@ -3,7 +3,7 @@ import sys
 import os
 
 tekst 	= sys.argv[1]
-katalog = "/home/spaszko/python/pyNotify"
+katalog = os.getenv("HOME") + "/python/pyNotify"
 
 from gi.repository import Notify
 tekst
