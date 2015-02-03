@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import sys, argparse, os
 katalog = os.getenv("HOME") + "/python/pyNotify"
 filename = katalog + "/newlogfile.log"
