@@ -9,6 +9,7 @@ katalog = os.getenv("HOME") + "/python/pyNotify"
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--silent",       action='store_true', required=False)
 parser.add_argument("-l", "--logmessage",   type=str, required=False)
+parser.add_argument("-d", "--datetime",   type=str, required=False, help="Format daty to Y-M-D H:M:S")
 parser.add_argument('message', metavar='T', type=str, nargs='+',
                    help='text message to show and log if you dont pass any logtext.')
 args    = parser.parse_args()
@@ -24,7 +25,11 @@ if (not args.silent):
     Hello.show ()
 
 #Pobranie czasu
-tekst_to_file = strftime("%Y-%m-%d %H:%M:%S")
+if (not args.datetime):
+	tekst_to_file = strftime("%Y-%m-%d %H:%M:%S")
+else:
+	tekst_to_file = args.datetime
+# Dopisanie wiadomosci
 if (not args.logmessage):
     tekst_to_file += " > " + tekst + "\n"
 else:

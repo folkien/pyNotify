@@ -4,6 +4,15 @@ import sys, argparse, os
 katalog = os.getenv("HOME") + "/python/pyNotify"
 filename = katalog + "/newlogfile.log"
 
+# TODO 
+# ->Przy odczytywaniu zrobić sortowanie danych wzgledem
+# daty i w taki sposób je wyświetlać na ekranie, po Dacie.
+# Ad.1 Nie trzeba sortować, wystarczy dane z pyReadNotify
+# przekierować do unixowego polecenia sort.
+# ->Dodatkowo robić przedziałki co zmianę miesiąca np takie 
+#   -----------------------Marzec--------------------------
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-a", "--all", action='store_true', required=False)
 parser.add_argument("-n", "--new", action='store_true', required=False)
