@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys, argparse, os
-katalog = os.getenv("HOME") + "/python/pyNotify"
-filename = katalog + "/newlogfile.log"
+import settings
+
+filename = settings.katalog + "/newlogfile.log"
 
 # TODO 
 # ->Przy odczytywaniu zrobić sortowanie danych wzgledem
@@ -19,7 +20,7 @@ parser.add_argument("-n", "--new", action='store_true', required=False)
 args = parser.parse_args()
 
 if args.all:
-	filename = katalog + "/logfile.log"
+	filename = settings.katalog + "/logfile.log"
 
 #odczyt newloga
 f = open(filename,'r')

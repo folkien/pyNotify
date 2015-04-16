@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sys, os, argparse
+import settings
 from gi.repository import Notify
 from time import gmtime, strftime
 
-katalog = os.getenv("HOME") + "/python/pyNotify"
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--silent",       action='store_true', required=False)
@@ -37,7 +38,7 @@ else:
 
 
 #zapis do loga
-filename = katalog + "/logfile.log"
+filename = settings.katalog + "/logfile.log"
 f = open(filename,'a')
 while f.closed:
 	time.sleep(1)
@@ -46,7 +47,7 @@ f.write(tekst_to_file)
 f.close()
 
 #zapis do newloga
-filename = katalog + "/newlogfile.log"
+filename = settings.katalog + "/newlogfile.log"
 f = open(filename,'a')
 while f.closed:
 	time.sleep(1)
