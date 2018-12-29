@@ -1,5 +1,4 @@
 echo "Instalacja pyNotify!"
 START_DIR=`pwd`
-cd /usr/bin
-sudo ln -sf $START_DIR/pyNotify.py ./pyNotify
-sudo ln -sf $START_DIR/pyReadNotify.py ./pyReadNotify
+sudo ln -sf $START_DIR/pyNotify.py          /usr/bin/pyNotify
+sudo ln -sf $START_DIR/pyReadNotify.py      /usr/bin/pyReadNotify
