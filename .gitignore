@@ -1,2 +1,2 @@
-logfile.log 
-newlogfile.log
+*.log
+*.pyc
